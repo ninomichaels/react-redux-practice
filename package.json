@@ -1,0 +1,39 @@
+{
+  "name": "react-redux-practice",
+  "version": "1.0.0",
+  "description": "React-Redux Demo App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ninomichaels/react-redux-practice.git"
+  },
+  "author": "Nino Michaels",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ninomichaels/react-redux-practice/issues"
+  },
+  "homepage": "https://github.com/ninomichaels/react-redux-practice#readme",
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "css-loader": "^0.23.1",
+    "node-sass": "^3.4.2",
+    "sass": "^0.5.0",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.12",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "babel-plugin-transform-runtime": "^6.4.3",
+    "babel-polyfill": "^6.3.14",
+    "babel-runtime": "^6.3.19"
+  }
+}
