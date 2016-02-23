@@ -1,39 +1,37 @@
 var path = require('path');
 var webpack = require('webpack');
 
-var commonsPlugin = new webpack.optimize.CommonsChunkPlugin({
-  name: 'commons',
-  filename: 'commons.js'
-});
+const PATHS = {
+  app: path.resolve(__dirname, 'app'),
+  build: path.resolve(__dirname, 'build')
+};
 
 module.exports = {
   entry: [
     'webpack/hot/dev-server',
     'webpack-dev-server/client?http://localhost:8080',
-    path.resolve(__dirname, 'app/main.js')
+    PATHS.app
   ],
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: PATHS.build,
     filename: 'bundle.js',
   },
-  plugins: [commonsPlugin],
   module: {
     loaders: [
       {
         test: /.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-        presets: ['es2015', 'react']
-      }
+        loader: 'babel',
+        include: PATHS.app
       },
       {
         test: /\.css$/,
-        loader: "style!css"
+        loader: "style!css",
+        include: PATHS.app
       },
       {
         test: /\.scss$/,
-        loader: "style!css!sass"
+        loader: "style!css!sass",
+        include: PATHS.app
       }
     ]
   },
